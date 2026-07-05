@@ -266,6 +266,7 @@ var getSecondaryEquation = () => theory.latexSymbol + "=\\max\\rho^{0.4}";
 var getPublicationMultiplier = (tau) => tau.pow(1.25);
 var getPublicationMultiplierFormula = (symbol) => symbol + "^{1.25}";
 var getTau = () => currency.value.pow(0.4);
+var getCurrencyFromTau = (tau) => [tau.max(BigNumber.ONE).pow(1/0.4), currency.symbol];
 var get2DGraphValue = () => currency.value.sign * (BigNumber.ONE + currency.value.abs()).log10().toNumber();
 
 var getC1 = (level) => Utils.getStepwisePowerSum(level, 2, 10, 0);
